@@ -5,9 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../public/css/AdminPageStyle.css">
-    <link rel="stylesheet" href="../public/css/styleIndex.css">
+    <link rel="stylesheet" href="../public/css/adminStyle.css">
+    <link rel="stylesheet" href="../public/vendors/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/styleIndex.css">
+    <link rel="stylesheet" href="../public/css/animate.css">
+    <link rel="stylesheet" href="../public/vendors/font-awesome/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -111,42 +113,46 @@
     </div>
     <div id="AddSong" class="tabcontent" style="height: 100%;">
         <h3>Add Song</h3>
-        <form enctype='multipart/form-data' id="addSongForm">
+        <form action="../pages/index/insertSong.php" method="post" enctype='multipart/form-data' id="addSongForm">
             <div class="table-responsive">
                 <table class="addSongTable table table-hover">
                     <tr class="active">
                         <td class="menu">Title</td>
-                        <td id="title" contenteditable="true" placeholder="Song Title ..." data-require="true"></td>
+                        <td><input type="text" id="title"></td>
                     </tr>
                     <tr class="success">
                         <td class="menu">Artist</td>
-                        <td id="artist" contenteditable="true" placeholder="Song Artists ..."></td>
+                        <td><input type="text" id="artist"></td>
                     </tr>
                     <tr class="active">
                         <td class="menu">Genre</td>
-                        <td id="genre" contenteditable="true" placeholder="Song Genre ..."></td>
+                        <td><input type="text" id="genre"></td>
                     </tr>
                     <tr class="warning">
                         <td class="menu">Album</td>
-                        <td id="album" contenteditable="true" placeholder="Song Album ..."></td>
+                        <td><input type="text" id="album"></td>
                     </tr>
                     <tr class="active">
                         <td class="menu">Song release</td>
-                        <td id="song-release-year" contenteditable="true" placeholder="0000"></td>
+                        <td><input type="text" id="songReleaseYear"></td>
                     </tr>
                     <tr class="danger">
                         <td class="menu">Album release</td>
-                        <td id="album-release-year" contenteditable="true" placeholder="0000-00-00"></td>
+                        <td><input type="text" id="albumReleaseYear" name="albumReleaseYear"></td>
                     </tr>
                     <tr class="active">
                         <td class="menu">Subtitle</td>
-                        <td id="subtitle" contenteditable="true" placeholder="Song Subtitle ..."></td>
+                        <td><input type="text" id="subtitle"></td>
                     </tr>
                     <tr class="info">
                         <td class="menu">Rating</td>
                         <td>
                             <select name="rating" id="rating">
-                                <option value=""></option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
                             </select>
                         </td>
                     </tr>
@@ -160,7 +166,7 @@
                     <input type="file" id="songFile">
                 </div>
             </div>
-            <button class="btn btn-success" type="submit" id="btn-add" onclick="myFunction()">Save</button>
+            <button class="btn btn-success" type="submit">Save</button>
         </form>
     </div>
     <div id="snackbarAdd">The song is added into databases successful...</div>
@@ -265,6 +271,8 @@
         });
     }
 </script>
+
+<script src="../public/js/script.js"></script>
 
 <script>
     function myAddFunction() {

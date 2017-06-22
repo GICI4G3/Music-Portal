@@ -117,7 +117,7 @@
                         <div class=\"overlay1\">
                             <h2>" . $results->data[$i]['song_artist'] . "</h2>
                             <input type='text' data-id3=\"".$results->data[$i]['song_artist']."\" value=\"".$results->data[$i]['song_artist']."\" id=\"artist_name\" hidden>
-                            <a class=\"info\" type='submit' name='submit' data-toggle=\"modal\" data-target=\"#artist".$results->data[$i]['song_id']."\" data-whatever=\"@mdo\" id=\"".$results->data[$i]['song_artist'].$results->data[$i]['song_name']."\">
+                            <a class=\"info\" data-toggle=\"modal\" data-target=\"#artist".$results->data[$i]['song_id']."\" data-whatever=\"@mdo\">
                                 View...
                             </a>
                         </div>";
@@ -138,7 +138,7 @@
                                     <h5>&nbsp;Last song release: ".$results->data[$i]['song_release_year']."</h5>
                                 </div>
                             </div>
-                            <div class=\"modal-body\">";
+                            <div class=\"modal-body\">";/*
             $query_song = "SELECT * FROM table_song ORDER BY song_name WHERE song_artist = '" . $results->data[$i]['song_artist'] . "'";
             $PaginatorSong  = new Paginator( $conn, $query_song );
             $song_results = $PaginatorSong->getData( $limit, $page );
@@ -148,7 +148,11 @@
                                     <span class='left'>".$song_results->data[$i]['song_name']."</span>
                                     <span class='right'>03:53</span>
                                 </a>";
-                        }
+                        }*/
+                            echo "<a href=\"../".$results->data[$i]['song_song_directory']."\" class=\"list-group-item\">
+                                    <span class='left'>".$results->data[$i]['song_name']."</span>
+                                    <span class='right'>03:53</span>
+                                </a>";
                     echo "</div>";
                 echo "</div>
                     </div>

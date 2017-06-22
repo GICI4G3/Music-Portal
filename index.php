@@ -21,7 +21,7 @@ session_start();
         <a href="#" id="home">Home</a>
         <a href="#" id="genres" onclick="openNav()">Genres</a>
         <a href="pages/artistPage.php" id="artists">Artists</a>
-        <a href="#" id="albums">Albums</a>
+        <a href="pages/albumPage.php" id="albums">Albums</a>
         <a href="pages/aboutus.php" id="about">About</a>
     </div>
     <div id="logInnav" class="sidenav">
@@ -141,7 +141,7 @@ session_start();
                 }
             }
             echo "</div>";
-            $song_query = "SELECT * FROM table_song ORDER BY song_name WHERE song_artist LIKE '".$row->song_artist."'";
+//            $song_query = "SELECT * FROM table_song ORDER BY song_name WHERE song_artist LIKE '".$row->song_artist."'";
             $result1 = $conn->query($sqlTest);
             $i = 0;
             while ($row = $result1->fetch_object()){
